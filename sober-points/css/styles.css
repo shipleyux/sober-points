@@ -218,3 +218,6 @@ form button {
   padding: 0.0625rem;
   margin-left: 0.5rem;
 }
+
+/* Map Styling */
+#map { height: 180px; }
