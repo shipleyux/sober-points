@@ -220,4 +220,10 @@ form button {
 }
 
 /* Map Styling */
-#map { height: 500px; }
+#map { 
+  width: 100%; /* Adjust width to fit the page or use a fixed width (e.g., 500px) */
+  height: 500px; /* Ensure the height is not zero */
+  margin: 0 auto; /* Center the map (optional) */
+  border: 1px solid #ccc; /* Optional styling */
+}
+
