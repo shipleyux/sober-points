@@ -1,229 +1,388 @@
-.container {
-  display: grid;
-  gap: 1.5rem;
-  padding: 1.5rem;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.hero {
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding-bottom: 10px;
+  white-space: nowrap;
 }
 
 .card {
+  flex: 0 0 150px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.card img {
   width: 100%;
-  margin: auto;
+  border-radius: 8px;
 }
 
-nav {
-  background-color: white;
-  font-family: 'Poppins';
+.see-more {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
-footer {
-  padding: 1rem;
-  background-color: #ecfd21;
-  font-family: 'Poppins';
-}
-
-section {
-  padding: 1rem;
-}
-
-section.hero {
-  height: 39.75rem;
-  background-image: url('../assets/images/happyman2.jpg');
-
-
-  background-size: cover;
-  background-position: center;
+#heading {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  padding-left: 8.875rem;
+  text-align: center;
+  width: 100%;
+  margin: 20px 0; /* Adjust spacing as needed */
+}
+/* General styling */
+.podcast-container {
+  margin-top: 20px;
 }
 
-section.hero.quitlit {
-  background-image: url('../assets/images/open-book.jpg');
+.podcast-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.podcast-updated {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Main podcast card */
+.podcast-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  flex-grow: 1; /* Makes sure it fills the available space */
+  position: relative; /* Needed for positioning the rank number */
+}
+
+.podcast-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.podcast-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.podcast-source {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.podcast-description {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.podcast-btn {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* General styling */
+.podcast-container {
+  margin-top: 20px;
+  margin-bottom: 68px;
+}
+
+.podcast-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.podcast-updated {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Align the top of the main card and list */
+.row {
+  display: flex;
+  align-items: stretch; /* Ensure both sections span the same height */
+}
+
+/* Podcast Main Card */
+.podcast-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  flex-grow: 1;
+  position: relative;
+}
+
+.podcast-image {
+  width: 150px; /* Increased image size */
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.podcast-rank-main {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.podcast-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.podcast-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.podcast-source {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.podcast-description {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.podcast-btn {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* Podcast list */
+.podcast-list {
+  margin-top: 0;
+}
+
+.podcast-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and text */
+  padding: 10px;
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Keeps default text color */
+  background: #fff; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  transition: background 0.2s ease-in-out;
+}
+
+.podcast-list-item:hover {
+  background: #f5f5f5; /* Light hover effect */
+}
+
+.podcast-thumbnail {
+  width: 50px; /* Adjust thumbnail size */
+  height: 50px;
+  border-radius: 5px; /* Slightly rounded corners */
+  object-fit: cover; /* Ensures the image fills the space */
+}
+
+.podcast-rank {
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.podcast-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.podcast-source {
+  margin: 0;
+  font-size: 12px;
+  color: #666; /* Slightly muted text */
+}
+
+
+.podcast-rank {
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.podcast-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+/* General styling */
+.podcast-container {
+  margin-top: 20px;
+}
+
+.podcast-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.podcast-updated {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* General styling */
+.podcast-container {
+  margin-top: 20px;
+}
+
+.podcast-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.podcast-updated {
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.quitlit-container {
+  margin-top: 20px;
+  margin-bottom: 68px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  background: white;
+  color: #000;
+  position: relative;
+  padding: 25px 25px 15px 25px;
 }
 
 .hero-content {
-  position: absolute;
-  background-color: rgba(236, 253, 33, 0.6);
-  height: fit-content;
-  width: fit-content;
-  padding: 1.5rem;
-  font-family: 'Poppins';
-  font-weight: bolder;
+  max-width: 800px;
 }
 
-.hero.quitlit .hero-content.quitlit {
-  position: absolute;
-  background-color: rgba(235, 253, 33, 0.606);
-  height: fit-content;
-  width: fit-content;
-  padding: 1.5rem;
-  font-family: 'Poppins';
-  font-weight: bolder;
-}
-
-/* Hero Section CONTACT page */
-section.hero.contact {
-  background-image: url('../assets/images/contact-us2.jpg');
-
-}
-.hero-content.contact {
-/* Convert 200px to rem (based on a base font size of 16px) */
-margin-top: 30rem;
-}
-
-.podcast {
-  width: 100%;
-}
-
-/* Podcasts */
-.grid {
-  margin: 3rem;
-  font-family: 'Roboto';
-}
-
-.grid-title {
-  text-align: center;
-  font-family: 'Poppins';
-  font-weight: 500;
-}
-
-.grid-subtitle {
-  text-align: center;
-  font-family: 'Poppins';
-  font-style: italic;
-}
-
-.position-relative {
-  position: relative;
-}
-
-/* Transparent number circle */
-.overlay-number {
-  position: absolute;
-  top: 0.625rem;
-  left: 0.625rem;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  padding: 0.3125rem 0.625rem;
+.hero-title {
+  font-size: 64px;
   font-weight: bold;
-  color: #000;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
 }
 
-.arrow-up {
-  width: 0;
-  height: 0;
-  border-left: 0.625rem solid transparent;
-  border-right: 0.625rem solid transparent;
-  border-bottom: 1.25rem solid green;
-  margin-left: 1.25rem;
-  margin-top: 0.5rem;
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
-.arrow-down {
-  width: 0;
-  height: 0;
-  border-left: 0.625rem solid transparent;
-  border-right: 0.625rem solid transparent;
-  border-top: 1.25rem solid red;
-  margin-left: 1.25rem;
-  margin-top: 0.5rem;
-}
-/* No change tag */
-.no-change {
-  height: fit-content;
-  background-color: #ecfd21;
-  width: fit-content;
-  margin-top: 0.25rem;
-  margin-left: 1.125rem;
+.hero-text {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 30px;
+  font-weight: 400;
 }
 
-.image-container {
-  position: relative;
-  display: inline-block;
+.hero-arrow {
+  font-size: 32px;
+  color: black;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
-.image-container img {
-  max-width: 100%;
-  width: 10rem;
-  height: auto;
-  margin-left: 5rem;
+
+
+/* Align the top of the main card and list */
+.row {
+  display: flex;
+  align-items: stretch;
 }
 
-.heading-container {
+/* top rated sobercast list */
+
+.sobercastcontainer {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.heading-container h2 {
-  margin-right: 0.625rem;
+.sobercastimg {
+  max-width: 25%;
+  max-height:15%;
+  float: left;
 }
 
-h2.book {
-  padding-left: 0;
-}
-/* Book List */
-.book-list .container {
-  margin: 0 auto;
+.sobercasttext {
+  padding-left: 20px;
+  float: left;
 }
 
-.book-list p {
-  max-width: 37.5rem;
+.sobercastlistitems {
+  margin: 18px 0px 18px 0px;
 }
-
-.book-list .image-container {
-  position: relative;
-}
-
-.book-list .overlay-number {
-  position: absolute;
-  top: 0.625rem;
-  left: 5.3125rem;
-  font-size: 1.25rem;
-  background: rgba(246, 245, 245, 0.597);
-  color: black;
-  padding: 0.3125rem;
-  border-radius: 50%;
-}
-
-.custom-footer {
-  margin-top: 1.25rem;
-  padding-left: 1.25rem;
-  text-align: center;
-}
-
-.form-group {
-  padding: 1rem;
-}
-/* Contact form button */
-form button {
-  margin-left: 1rem;
-}
-/* Book list classes */
-
-.book-list .arrow-up {
-  margin-bottom: 0.9375rem;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
-}
-
-.book-list .arrow-down {
-  margin-bottom: 0.9375rem;
-  margin-right: 1rem;
-  margin-left: 0.5rem;
-}
-
-.book-list .no-change {
-  margin-bottom: 0.625rem;
-  margin-right: 0.5rem;
-  padding: 0.0625rem;
-  margin-left: 0.5rem;
-}
-
-/* Map Styling */
-#map { 
-  width: 100%; /* Adjust width to fit the page or use a fixed width (e.g., 500px) */
-  height: 500px; /* Ensure the height is not zero */
-  margin: 0 auto; /* Center the map (optional) */
-  border: 1px solid #ccc; /* Optional styling */
-}
-
