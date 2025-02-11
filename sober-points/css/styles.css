@@ -322,6 +322,7 @@ body {
 
 .hero-content {
   max-width: 800px;
+  padding: 50px;
 }
 
 .hero-title {
@@ -406,6 +407,10 @@ padding: 0 16px 16px 16px;
 
 .communities-wrapper-text {
 padding: 0 16px 16px 16px;
+}
+
+.container.podcast-container {
+
 }
 
 @media screen and (max-width: 500px) {
