@@ -151,11 +151,11 @@ body {
 /* Podcast Main Card */
 .podcast-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  height: 100%;
+  height: fit-content;
   flex-grow: 1;
   position: relative;
 }
@@ -369,7 +369,7 @@ body {
 .sobercastcontainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
 }
 
 .sobercastimg {
@@ -384,5 +384,33 @@ body {
 }
 
 .sobercastlistitems {
-  margin: 18px 0px 18px 0px;
+  margin: 2px 0px 2px 0px;
+}
+
+.communities-wrapper {
+display: flex;
+flex-direction: row;
+padding-top: 16px;
+align-items: flex-start;
+}
+
+.communities-wrapper h2 {
+padding: 0 16px 16px 16px;
+}
+
+
+.communities-wrapper img {
+  width: 25%;
+  height: auto;
+}
+
+.communities-wrapper-text {
+padding: 0 16px 16px 16px;
+}
+
+@media screen and (max-width: 500px) {
+  .communities-wrapper { 
+    flex-direction: column;
+  }
+
 }
