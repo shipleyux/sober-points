@@ -4,33 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sober Points</title>
-    <link rel="stylesheet" href="css/podcastFilter.css">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script defer src="scripts/podcastFilter.js"></script>
+    <link rel="stylesheet" href="css/podcastFilter.css">
+    
+    <!-- Bootstrap CSS -->
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- Select2 Bootstrap 5 Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
+
+
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav style="padding: 8px; border:1px;" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/images/SP-Main-Logo-Black.png" alt="MyBrand Logo" width="150" height="auto" class="d-inline-block align-top">
+                <img src="assets/images/SP-Main-Logo-Black.png" alt="MyBrand Logo" width="150" class="d-inline-block align-top">
             </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sober Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sober Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -45,26 +44,21 @@
 
     <!-- Multi-Select Tabs -->
     <div class="tabs">
-        <div class="tab" onclick="toggleCategory('Male-led', this)">Male-led</div>
-        <div class="tab" onclick="toggleCategory('Female-led', this)">Female-led</div>
-        <div class="tab" onclick="toggleCategory('Expert-led', this)">Expert-led</div>
-        <div class="tab" onclick="toggleCategory('AA-focused', this)">AA-focused</div>
-        <div class="tab" onclick="toggleCategory('Younger', this)">Younger</div>
-        <div class="tab" onclick="toggleCategory('Mature', this)">Mature</div>
-        <div class="tab" onclick="toggleCategory('UK-based', this)">UK-based</div>
-        <div class="tab" onclick="toggleCategory('Worldwide', this)">Worldwide</div>
+        <div class="tab" onclick="toggleCategory('New-Release', this)">New-Release</div>
+        <div class="tab" onclick="toggleCategory('Popular', this)">Popular</div>
+        <div class="tab" onclick="toggleCategory('Recomended', this)">Recomended</div>
     </div>
 
     <!-- Search & Dropdown Filter -->
     <div class="filter-container">
         <input type="text" id="searchInput" placeholder="🔍 Search podcasts..." onkeyup="filterPodcasts()">
-        <select id="subCategoryFilter" onchange="filterPodcasts()">
-            <option value="">All Subcategories</option>
+        <select id="multiSelect"  style="width: 400px !important;" class="form-select select2" multiple data-placeholder="Select categories..." onchange="filterPodcasts()">
             <option value="AI">AI</option>
             <option value="Fitness">Fitness</option>
             <option value="Entrepreneurship">Entrepreneurship</option>
             <option value="Spotify">Spotify</option>
         </select>
+        
     </div>
 
     <!-- Podcast Grid -->
@@ -73,8 +67,8 @@
             <div class="content">
                 <h3>One For The Road</h3>
                 <p class="card-text">Weekly podcast with Dave Wilson</p>
-                <iframe src="https://open.spotify.com/embed/episode/3XvmGhI0QfMXzIi6d1w3La?utm_source=generator" width="100%" height="180" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                <a href="#" class="btn btn-primary">Listen on spotify</a>
+                <iframe src="https://open.spotify.com/embed/episode/3XvmGhI0QfMXzIi6d1w3La" width="100%" height="180"></iframe>
+                <a href="#" class="btn btn-primary">Listen on Spotify</a>
                 <p>Male-led | AI</p>
             </div>
         </div>
@@ -82,7 +76,7 @@
             <div class="content">
                 <h3>Sober Awkward</h3>
                 <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Female-ledy Living">
+                <img src="https://placehold.co/400" alt="Sober Awkward">
                 <a href="#" class="btn btn-primary">Learn More</a>
                 <p>Female-led | Fitness</p>
             </div>
@@ -91,12 +85,12 @@
             <div class="content">
                 <h3>Startup Stories</h3>
                 <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Female-ledy Living">
+                <img src="https://placehold.co/400" alt="Startup Stories">
                 <a href="#" class="btn btn-primary">Learn More</a>
                 <p>Expert-led | Entrepreneurship</p>
             </div>
         </div>
-        <div class="podcast-card" data-title="Over the Influence" data-category="female-led" data-subcategory="Spotify">
+        <div class="podcast-card" data-title="Over the Influence" data-category="Female-led" data-subcategory="Spotify">
             <div class="content">
                 <h3>Over the Influence</h3>
                 <p class="card-text">This is a description for the card.</p>
@@ -105,63 +99,52 @@
                 <p>Female-led | Spotify</p>
             </div>
         </div>
-        <div class="podcast-card" data-title="Addicted to Recovery"" data-category="AA-focused" data-subcategory="Fitness">
+        <div class="podcast-card" data-title="Addicted to Recovery" data-category="AA-focused" data-subcategory="Fitness">
             <div class="content">
                 <h3>Addicted to Recovery</h3>
                 <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Addicted to Recovery"">
+                <img src="https://placehold.co/400" alt="Addicted to Recovery">
                 <a href="#" class="btn btn-primary">Learn More</a>
-                <p>AA-focused | Spotify</p>
+                <p>AA-focused | Fitness</p>
             </div>
         </div>
         <div class="podcast-card" data-title="Alcohol Free Life" data-category="Younger" data-subcategory="Spotify">
             <div class="content">
                 <h3>Alcohol Free Life</h3>
                 <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Addicted to Recovery"">
+                <img src="https://placehold.co/400" alt="Alcohol Free Life">
                 <a href="#" class="btn btn-primary">Learn More</a>
+                <p>Younger | Spotify</p>
+            </div>
+        </div>
 
-                <p>younger | Spotify</p>
-            </div>
-        </div>
-        <div class="podcast-card" data-title="AA-focused Weekly" data-category="Mature" data-subcategory="Spotify">
+        <div class="podcast-card" data-title="Alcohol Free Life" data-category="Recomended" data-subcategory="Fitness">
             <div class="content">
-                <h3>Mature</h3>
-                <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Addicted to Recovery">
+                <h3>Alcohol Free Life 4 eva XD</h3>
+                <p class="card-text">This is a description for the recommended card.</p>
+                <img src="https://placehold.co/400" alt="Alcohol Free Life">
                 <a href="#" class="btn btn-primary">Learn More</a>
-                <p>Mature | Spotify</p>
+                <p>Recomended | Spotify</p>
             </div>
         </div>
-        <div class="podcast-card" data-title="UK-based" data-category="UK-based" data-subcategory="Spotify">
-            <div class="content">
-                <h3>UK-based Weekly</h3>
-                <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Addicted to Recovery"">
-                <a href="#" class="btn btn-primary">Learn More</a>
-                <p>UK-based | Spotify</p>
-            </div>
-        </div>
-        <div class="podcast-card" data-title="AA-focused Weekly" data-category="AA-focused" data-subcategory="Spotify">
-            <div class="content">
-                <h3>AA-focused Weekly</h3>
-                <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Addicted to Recovery"">
-                <a href="#" class="btn btn-primary">Learn More</a>
-                <p>AA-focused | Spotify</p>
-            </div>
-        </div>
-        <div class="podcast-card" data-title="Worldwide" data-category="Worldwide" data-subcategory="Spotify">
-            <div class="content">
-                <h3>Worldwide</h3>
-                <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Addicted to Recovery"">
-                <a href="#" class="btn btn-primary">Learn More</a>
-                <p>Worldwide | Spotify</p>
-            </div>
-        </div>
-        <!-- Podcast Cards Here (same as original) -->
     </div>
 
+        <!-- jQuery (Required for Select2) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#multiSelect').select2({
+                theme: 'bootstrap-5',
+                placeholder: 'Select categories...',
+                allowClear: true,
+                wiidth: '350px;'
+            });
+        });
+    </script>
+
+    <!-- 5️⃣ Load your custom script -->
+    <script defer src="scripts/podcastFilter.js"></script>
 </body>
 </html>
