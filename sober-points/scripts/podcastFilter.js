@@ -30,16 +30,18 @@ function filterPodcasts() {
         let category = podcast.getAttribute("data-category");
         let subcategory = podcast.getAttribute("data-subcategory");
 
+        // Convert subcategory string to an array
+        let subcategories = subcategory.split(",").map(sub => sub.trim());
+
         // Matches the search input
         let matchesTitle = title.includes(searchInput);
-
-        console.log(activeCategories)
 
         // Matches the selected categories (Tabs)
         let matchesCategory = activeCategories.size === 0 || activeCategories.has(category);
 
-        // Matches the multi-select dropdown
-        let matchesSubcategory = selectedSubcategories.length === 0 || selectedSubcategories.includes(subcategory);
+        // Matches the multi-select dropdown (supports multiple subcategories)
+        let matchesSubcategory = selectedSubcategories.length === 0 || 
+            selectedSubcategories.some(selected => subcategories.includes(selected));
 
         let shouldShow = matchesTitle && matchesCategory && matchesSubcategory;
 
@@ -61,4 +63,30 @@ function filterPodcasts() {
 // Toggle Dark Mode
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
+}
+
+function vote(button, change) {
+    let voteContainer = button.closest(".vote-buttons");
+    let voteCountElement = voteContainer.querySelector(".vote-count");
+
+    let currentVotes = parseInt(voteCountElement.innerText);
+    let newVotes = currentVotes + change;
+
+    // Prevent downvotes below -5 (optional)
+    if (newVotes < -5) return;
+
+    voteCountElement.innerText = newVotes;
+
+    // Highlight the active vote button
+    voteContainer.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+
+    if (change === 1) {
+        button.classList.add("active");
+        button.style.color = "orange";
+        voteContainer.querySelector(".downvote-btn").style.color = "gray";
+    } else {
+        button.classList.add("active");
+        button.style.color = "blue";
+        voteContainer.querySelector(".upvote-btn").style.color = "gray";
+    }
 }

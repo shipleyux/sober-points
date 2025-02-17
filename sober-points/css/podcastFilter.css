@@ -156,3 +156,42 @@ input, select {
         font-size: 14px;
     }
 }
+.vote-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.vote-buttons button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.vote-buttons button:focus {
+    outline: none;
+}
+
+.upvote-btn {
+    color: orange;
+}
+
+.downvote-btn {
+    color: gray;
+}
+
+.vote-buttons button:hover {
+    transform: scale(1.2);
+}
+
+.vote-count {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    min-width: 20px;
+    text-align: center;
+}

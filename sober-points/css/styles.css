@@ -155,7 +155,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  height: fit-content;
+  height: auto;
   flex-grow: 1;
   position: relative;
 }
@@ -421,7 +421,8 @@ padding: 0 16px 16px 16px;
 }
 
 .podcast-card {
-  width: 300px; /* Adjust as needed */
+  width: auto; /* Adjust as needed */
+  height: fit-content;
   opacity: 1;
   transform: scale(1);
   transition: opacity 0.3s ease, transform 0.3s ease;

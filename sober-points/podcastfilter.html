@@ -53,26 +53,37 @@
     <div class="filter-container">
         <input type="text" id="searchInput" placeholder="🔍 Search podcasts..." onkeyup="filterPodcasts()">
         <select id="multiSelect"  style="width: 400px !important;" class="form-select select2" multiple data-placeholder="Select categories..." onchange="filterPodcasts()">
-            <option value="AI">AI</option>
-            <option value="Fitness">Fitness</option>
-            <option value="Entrepreneurship">Entrepreneurship</option>
-            <option value="Spotify">Spotify</option>
+            <option value="Female-led">Female-led</option>
+            <option value="Male-led">Male-led</option>
+            <option value="AA-focused">AA-focused</option>
+            <option value="Younger">Mature</option>
+            <option value="UK-based">UK Based</option>
+            <option value="Younger">Expert-led</option>
+            <option value="Younger">Guests</option>
+            <option value="Younger">No Guests</option>
+            <option value="Younger">Real Stories</option>
         </select>
         
     </div>
 
     <!-- Podcast Grid -->
     <div id="podcastGrid" class="podcast-grid">
-        <div class="podcast-card" data-title="One For The Road" data-category="Male-led" data-subcategory="AI">
+        <div class="podcast-card" data-title="One For The Road" data-category="Popular" data-subcategory="Male-led, UK-based">
             <div class="content">
                 <h3>One For The Road</h3>
-                <p class="card-text">Weekly podcast with Dave Wilson</p>
+             
                 <iframe src="https://open.spotify.com/embed/episode/3XvmGhI0QfMXzIi6d1w3La" width="100%" height="180"></iframe>
-                <a href="#" class="btn btn-primary">Listen on Spotify</a>
-                <p>Male-led | AI</p>
+                <p class="card-text">Weekly podcast with Dave Wilson</p>
+                <!-- Upvote/Downvote Section -->
+    <div class="vote-buttons">
+        <button class="upvote-btn" onclick="vote(this, 1)">🔼</button>
+        <span class="vote-count">0</span>
+        <button class="downvote-btn" onclick="vote(this, -1)">🔽</button>
+    </div>
+    
             </div>
         </div>
-        <div class="podcast-card" data-title="Sober Awkward" data-category="Female-led" data-subcategory="Fitness">
+        <div class="podcast-card" data-title="Sober Awkward" data-category="Popular" data-subcategory="Guests">
             <div class="content">
                 <h3>Sober Awkward</h3>
                 <p class="card-text">This is a description for the card.</p>
@@ -81,13 +92,13 @@
                 <p>Female-led | Fitness</p>
             </div>
         </div>
-        <div class="podcast-card" data-title="Startup Stories" data-category="Expert-led" data-subcategory="Entrepreneurship">
+        <div class="podcast-card" data-title="OTI" data-category="Popular"   data-subcategory="Guests, UK-based">
             <div class="content">
-                <h3>Startup Stories</h3>
+                <h3>OTI</h3>
                 <p class="card-text">This is a description for the card.</p>
                 <img src="https://placehold.co/400" alt="Startup Stories">
                 <a href="#" class="btn btn-primary">Learn More</a>
-                <p>Expert-led | Entrepreneurship</p>
+               
             </div>
         </div>
         <div class="podcast-card" data-title="Over the Influence" data-category="Female-led" data-subcategory="Spotify">
@@ -99,14 +110,15 @@
                 <p>Female-led | Spotify</p>
             </div>
         </div>
-        <div class="podcast-card" data-title="Addicted to Recovery" data-category="AA-focused" data-subcategory="Fitness">
-            <div class="content">
-                <h3>Addicted to Recovery</h3>
-                <p class="card-text">This is a description for the card.</p>
-                <img src="https://placehold.co/400" alt="Addicted to Recovery">
-                <a href="#" class="btn btn-primary">Learn More</a>
-                <p>AA-focused | Fitness</p>
-            </div>
+       
+  <div class="podcast-card" data-title="Addicted to Recovery" data-category="AA-focused" data-subcategory="Fitness">
+    <div class="content">
+        <h3>Recovery Elevator</h3>
+        <img src="https://placehold.co/400" alt="Recovery Elevator">
+        <a href="#" class="btn btn-primary">Learn More</a>
+       
+    </div>
+
         </div>
         <div class="podcast-card" data-title="Alcohol Free Life" data-category="Younger" data-subcategory="Spotify">
             <div class="content">
@@ -131,6 +143,11 @@
 
         <!-- jQuery (Required for Select2) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  
+
+</script>
+    
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
